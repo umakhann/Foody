@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbarStart"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#2e856e"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imagebackrecdet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/back"
+            android:layout_marginEnd="15dp"
+            tools:layout_editor_absoluteX="343dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Search Recipe"
+                android:textColor="@color/nearwhite"
+                android:textColorHint="@android:color/darker_gray"
+                android:backgroundTint="@color/nearwhite"
+
+                 />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/search"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginEnd="15dp"
+
+                tools:ignore="RtlHardcoded" />
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchrec"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="75dp"
+        tools:listitem="@layout/search_tuple" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
