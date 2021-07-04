@@ -203,12 +203,12 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack("rec")
-                .replace(R.id.frameL, getInstance(list.get(a).getId()))
+                .replace(R.id.frameL, getInstance(recipeList.get(a).getId()))
                 .commit();
 
-        recipeViewModel.getCurrentRecipe(list.get(a).getId());
-        recipeViewModel.getSimRecipes(list.get(a).getId());
+        recipeViewModel.getCurrentRecipe(recipeList.get(a).getId());
+        recipeViewModel.getSimRecipes(recipeList.get(a).getId());
         recipeViewModel.getIngredients();
-        recipeViewModel.rowExists(list.get(a).getId());
+        recipeViewModel.rowExists(recipeList.get(a).getId());
     }
 }
