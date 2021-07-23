@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.foodapp.R;
 import com.example.foodapp.model.Ingredient;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.ViewHolder> {
@@ -46,7 +47,9 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
         }
 
         holder.name.setText(ingredient.getName());
-        holder.count.setText(ingredient.getAmount() + " "
+
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
+        holder.count.setText(numberFormat.format(ingredient.getAmount()) + " "
                 + ingredient.getUnit());
 
 

@@ -1,30 +1,22 @@
 package com.example.foodapp.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodapp.R;
-import com.example.foodapp.RecipeDetailFrag;
+import com.example.foodapp.ui.RecipeDetailFrag;
 import com.example.foodapp.model.Recipe;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import static com.example.foodapp.R.color.black;
-import static com.example.foodapp.R.color.naiveblue;
-import static com.example.foodapp.R.color.purple_200;
 
 public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:background="@color/backgreen">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/purple_500"
+        android:background="@color/greenmed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -45,21 +45,21 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
-        android:background="@color/purple_500"
+        android:background="@color/greenmed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/imagevegtrecdet"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.177" />
+<!--        <ImageView-->
+<!--            android:id="@+id/imagevegtrecdet"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.177" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -75,6 +75,23 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
+
+                <TextView
+                    android:id="@+id/nameofrecipedetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageofrecdetail"
+                />
+
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -84,39 +101,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <TextView
-                android:id="@+id/nameofrecipedetail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/ingredients"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:layout_marginTop="30dp"-->
-<!--                android:layout_marginBottom="15dp"-->
-
-
-
-<!--                android:id="@+id/textingredients"-->
-<!--                app:layout_constraintBottom_toTopOf="@+id/ingrec"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/nameofrecipedetail" />-->
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
 
@@ -126,192 +114,52 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
                 android:nestedScrollingEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/ingredienttuple" />
 
+
+
+                tools:listitem="@layout/ingredienttuple" />
 
             <TextView
                 android:id="@+id/summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
+                android:text="INSTRUCTIONS"
+                android:textSize="18sp" />
 
-
-                android:text="Instructions"
-
-
-                app:layout_constraintBottom_toTopOf="@id/similarrec"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ingrec" />
-
-
-
-
-
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:orientation="horizontal"
+                android:background="#ccc"
+                android:backgroundTint="#ccc" />
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/similarrec"
-                android:layout_marginTop="35dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ingrec"
-                tools:itemCount="20"
-                tools:listitem="@layout/tuple" />
+                android:layout_marginStart="8dp"
+
+
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="15dp"
+                tools:listitem="@layout/similartuple" />
+
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/ingrec"-->
 
 
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--    xmlns:tools="http://schemas.android.com/tools"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    android:background="#fff">-->
-
-    <!--    <androidx.appcompat.widget.Toolbar-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="60dp"-->
-    <!--        android:background="@color/purple_500"-->
-    <!--        android:elevation="5dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/imagebackrecdet"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-
-    <!--            app:srcCompat="@drawable/back"-->
-    <!--            tools:layout_editor_absoluteX="343dp"-->
-    <!--            tools:layout_editor_absoluteY="16dp" />-->
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/imagesharerecdet"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="right"-->
-    <!--            app:srcCompat="@drawable/ic_action_name"-->
-    <!--            android:layout_marginRight="15dp"/>-->
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/imagefavouritesrecdet"-->
-    <!--            android:layout_width="25dp"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="right"-->
-    <!--            android:layout_marginRight="15dp"-->
-    <!--            />-->
-
-
-
-    <!--    </androidx.appcompat.widget.Toolbar>-->
-
-    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--        android:id="@+id/constraintLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="140dp"-->
-    <!--        android:background="@color/purple_500"-->
-    <!--        android:layout_marginTop="60dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
-
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/imagevegtrecdet"-->
-    <!--            android:layout_width="50dp"-->
-    <!--            android:layout_height="50dp"-->
-    <!--            android:layout_marginStart="16dp"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            app:layout_constraintVertical_bias="0.177"-->
-    <!--            />-->
-
-
-    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-    <!--    <de.hdodenhof.circleimageview.CircleImageView-->
-    <!--        android:id="@+id/imageofrecdetail"-->
-    <!--        android:layout_width="160dp"-->
-    <!--        android:layout_height="160dp"-->
-    <!--        android:src="@drawable/ellipse_1"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"-->
-    <!--       />-->
-
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="100dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">-->
-
-    <!--        <LinearLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:orientation="vertical">-->
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/nameofrecipedetail"-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_marginTop="28dp"-->
-    <!--                android:gravity="center"-->
-    <!--                android:layout_gravity="center_horizontal"-->
-    <!--                android:textSize="25sp"-->
-    <!--                android:textStyle="bold" />-->
-
-
-    <!--            <TextView-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_marginStart="10dp"-->
-    <!--                android:layout_marginTop="40dp"-->
-    <!--                android:layout_marginBottom="15dp"-->
-    <!--                android:text="Ingredients"-->
-    <!--                android:textSize="20sp" />-->
-
-    <!--            <androidx.recyclerview.widget.RecyclerView-->
-    <!--                android:id="@+id/ingrec"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_marginStart="10dp"-->
-    <!--                android:layout_marginEnd="20dp"-->
-    <!--                tools:listitem="@layout/ingredienttuple"-->
-    <!--/>-->
-
-
-    <!--            <androidx.recyclerview.widget.RecyclerView-->
-    <!--                android:id="@+id/similarrec"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                tools:listitem="@layout/similartuple"-->
-
-    <!--                />-->
-
-    <!--        </LinearLayout>-->
-    <!--    </ScrollView>-->
-
-
-    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

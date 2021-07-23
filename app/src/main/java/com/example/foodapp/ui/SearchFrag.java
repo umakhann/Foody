@@ -1,4 +1,4 @@
-package com.example.foodapp;
+package com.example.foodapp.ui;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,11 +12,11 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodapp.R;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.SearchFragRecyclerAdapter;
 import com.example.foodapp.model.Recipe;

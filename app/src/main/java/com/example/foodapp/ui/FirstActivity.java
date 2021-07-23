@@ -1,10 +1,11 @@
-package com.example.foodapp;
+package com.example.foodapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.foodapp.R;
 import com.example.foodapp.viewmodel.RecipesViewModel;
 
 public class FirstActivity extends AppCompatActivity {

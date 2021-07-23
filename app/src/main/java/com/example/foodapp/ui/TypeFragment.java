@@ -1,4 +1,4 @@
-package com.example.foodapp;
+package com.example.foodapp.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodapp.R;
 import com.example.foodapp.util.Util;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.RecAdapter;
@@ -84,12 +85,7 @@ public class TypeFragment extends Fragment implements ClickingTuple {
 
         back = view.findViewById(R.id.back);
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().popBackStack();
-            }
-        });
+        back.setOnClickListener(v -> getActivity().getSupportFragmentManager().popBackStack());
     }
 
     private void setAdapter(List<Recipe> recipes, View view, int type) {
@@ -101,7 +97,7 @@ public class TypeFragment extends Fragment implements ClickingTuple {
 
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerViewAdapter = new RecAdapter(recipes, getActivity(), TypeFragment.this);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 

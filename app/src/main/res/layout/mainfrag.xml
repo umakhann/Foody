@@ -4,45 +4,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#e6f0e6"
+    android:background="@color/backgreen"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:id="@+id/toolbarStart"
         android:layout_height="60dp"
+        android:background="@color/greenmed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#2e856e"
         tools:ignore="MissingConstraints">
 
-
-
-
-
-        <TextView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:layout_margin="5dp"
-            android:layout_gravity="center"
-            android:id="@+id/searchtext"/>
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/search"
-            android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-
-             />
-
-
-
+            android:layout_gravity="right"
+            android:id="@+id/searchmg"
+            android:src="@drawable/search"
+            android:background="@android:color/transparent"
+            android:layout_margin="16dp"
+            android:visibility="visible"/>
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -52,6 +34,7 @@
         android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/backgreen"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +42,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         tools:ignore="MissingClass">
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mainfragrec"

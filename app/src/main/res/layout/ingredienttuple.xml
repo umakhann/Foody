@@ -22,11 +22,11 @@
             android:id="@+id/ingrBasliq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="10dp"
-            android:text="Ingredients"
+            android:text="INGREDIENTS"
             android:textSize="18sp"
 
             />
@@ -67,9 +67,9 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height=".5dp"
-        android:background="#eee"
-        android:backgroundTint="#eee"
+        android:layout_height="1px"
+        android:background="#ccc"
+        android:backgroundTint="#ccc"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

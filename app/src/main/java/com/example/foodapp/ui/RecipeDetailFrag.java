@@ -1,4 +1,4 @@
-package com.example.foodapp;
+package com.example.foodapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodapp.R;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.IngredientAdapter;
 import com.example.foodapp.adapter.RecAdapter;
@@ -25,15 +26,13 @@ import com.example.foodapp.model.Recipe;
 import com.example.foodapp.viewmodel.RecipesViewModel;
 import com.squareup.picasso.Picasso;
 
-import java.text.BreakIterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
-
+    public static final String TAG = "recipeDetTag";
     private RecyclerView recyclerView, simRec;
     private IngredientAdapter recyclerViewAdapter;
     private RecAdapter recAdapter;
@@ -68,7 +67,7 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
         View view = inflater.inflate(R.layout.recipedetail, container, false);
 
-        vegInfo = view.findViewById(R.id.imagevegtrecdet);
+//        vegInfo = view.findViewById(R.id.imagevegtrecdet);
         share = view.findViewById(R.id.imagesharerecdet);
         favourite = view.findViewById(R.id.imagefavouritesrecdet);
         back = view.findViewById(R.id.imagebackrecdet);
@@ -76,7 +75,7 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
 
         recdetailimage = view.findViewById(R.id.imageofrecdetail);
-        title = view.findViewById(R.id.nameofrecipedetail);
+//        title = view.findViewById(R.id.nameofrecipedetail);
         summary = view.findViewById(R.id.summary);
 
         recipeViewModel = RecipesViewModel.getInstance();
@@ -90,11 +89,49 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
                     RecipeDetailFrag.recipe = recipe;
                     Picasso.get().load(recipe.getImage()).into(recdetailimage);
-                    title.setText(recipe.getTitle());
+//                    title.setText(recipe.getTitle());
 
-                    if(recipe.getInstructions() != null)
-                    summary.setText("Instructions\n\n " + recipe.getInstructions());
-                    else  summary.setText("No Instructions!");
+                    String instr = recipe.getInstructions();
+
+//                    StringBuilder sb = new StringBuilder(instr);
+//                    Log.d(TAG, "onCreateView: " + sb.length());
+
+//                    int i=0;
+//                    while(i < sb.length()){
+//
+//                        if(i != (sb.length()-1) && sb.charAt(i) == '.' && sb.charAt(i+1) != ' ') {
+//                            sb.insert((i+1), ' ');
+//                        }
+//
+//
+//                        if(sb.charAt(i) == '<'){
+//                            while(sb.charAt(i) != '>'){
+//                                sb.deleteCharAt(i);
+//                            }
+//                            sb.deleteCharAt(i);
+//
+//                                if(sb.charAt(i) == '<'){
+//                                    while(sb.charAt(i) != '>'){
+//                                        sb.deleteCharAt(i);
+//                                    }
+//                                    sb.deleteCharAt(i);
+//                                }
+//                        }
+//                        i++;
+//                    }
+
+//                    if(sb.charAt(sb.length()-2) != '.'){
+//                        sb.insert((i+1), '.');
+//                    }
+//                    else if(sb.charAt(sb.length()-1) != '.')
+//                        sb.append('.');
+
+//                    Log.d(TAG, "onCreateView: " + sb.length());
+
+
+                    if(instr != null){
+                    summary.setText("INSTRUCTIONS\n\n" + instr);
+                    } else  summary.setText("No Instructions!");
 
 //                        Log.d("instructionlog", recipe.getInstructions());
 
@@ -108,7 +145,7 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
 
 
-                    repo.rowExists(id).observe(getActivity(), new Observer<Boolean>() {
+                    repo.rowExists(id).observe(this.getActivity(), new Observer<Boolean>() {
                         @Override
                         public void onChanged(Boolean aBoolean) {
                             if (aBoolean) {

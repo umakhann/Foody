@@ -1,10 +1,10 @@
-package com.example.foodapp;
+package com.example.foodapp.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodapp.R;
 import com.example.foodapp.util.Util;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.MainFragRecAdapter;
@@ -20,7 +21,7 @@ public class MainFrag extends Fragment implements ClickingTuple {
 
     RecyclerView recyclerView;
     MainFragRecAdapter adapter;
-    TextView searchText;
+    ImageButton searchText;
 
     public static MainFrag getInstance(){
         return new MainFrag();
@@ -41,7 +42,7 @@ public class MainFrag extends Fragment implements ClickingTuple {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        searchText = view.findViewById(R.id.searchtext);
+        searchText = view.findViewById(R.id.searchmg);
 
         searchText.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager()
