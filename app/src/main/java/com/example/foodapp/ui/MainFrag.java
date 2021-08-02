@@ -1,10 +1,14 @@
 package com.example.foodapp.ui;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +21,7 @@ import com.example.foodapp.util.Util;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.MainFragRecAdapter;
 
-public class MainFrag extends Fragment implements ClickingTuple {
+public class MainFrag extends BaseFragment implements ClickingTuple {
 
     RecyclerView recyclerView;
     MainFragRecAdapter adapter;
@@ -31,7 +35,7 @@ public class MainFrag extends Fragment implements ClickingTuple {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.mainfrag, container, false);
+        View view = LayoutInflater.from(getActivity().getApplicationContext()).inflate(R.layout.frag_main, container, false);
 
 
         return view;
@@ -76,9 +80,18 @@ public class MainFrag extends Fragment implements ClickingTuple {
     @Override
     public void clickedOnTuple(int a) {
 
+        if(isInternetOn()){
                 getActivity().getSupportFragmentManager()
                         .beginTransaction().add(R.id.frameL, TypeFragment.getInstance(a))
                         .addToBackStack("type")
-                        .commit();
+                        .commit();}
+
+        else {
+            createToast("Bağlantı xətası");
         }
+        }
+
+
+
+
     }

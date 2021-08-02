@@ -1,18 +1,16 @@
-package com.example.foodapp.repository;
+package com.example.foodapp.source;
 
 import android.app.Application;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.foodapp.api.source.ApiInterface;
-import com.example.foodapp.api.source.Retro;
-import com.example.foodapp.database.RecipeDao;
-import com.example.foodapp.database.RecipeDatabase;
+import com.example.foodapp.source.api.ApiInterface;
+import com.example.foodapp.source.api.Retro;
+import com.example.foodapp.source.database.RecipeDao;
+import com.example.foodapp.source.database.RecipeDatabase;
 import com.example.foodapp.model.Obyekt;
 import com.example.foodapp.model.Random;
 import com.example.foodapp.model.Recipe;

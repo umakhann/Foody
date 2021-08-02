@@ -1,4 +1,4 @@
-package com.example.foodapp.viewmodel;
+package com.example.foodapp.source;
 
 import android.app.Application;
 
@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.foodapp.util.Util;
 import com.example.foodapp.model.Ingredient;
 import com.example.foodapp.model.Recipe;
-import com.example.foodapp.repository.RecipesRepo;
 
 import java.util.List;
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,17 +21,18 @@ import com.example.foodapp.R;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.IngredientAdapter;
 import com.example.foodapp.adapter.RecAdapter;
-import com.example.foodapp.repository.RecipesRepo;
+import com.example.foodapp.source.RecipesRepo;
 import com.example.foodapp.model.Ingredient;
 import com.example.foodapp.model.Recipe;
-import com.example.foodapp.viewmodel.RecipesViewModel;
+import com.example.foodapp.source.RecipesViewModel;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RecipeDetailFrag extends Fragment implements ClickingTuple {
+public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
     public static final String TAG = "recipeDetTag";
     private RecyclerView recyclerView, simRec;
@@ -44,9 +46,10 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
     private static Recipe recipe;
     public static List<Recipe> dbList;
 
-    private CircleImageView recdetailimage;
+    private ImageView recdetailimage;
     private ImageView vegan, vegetarian;
-    private TextView title, summary;
+    private TextView summary;
+    private CollapsingToolbarLayout title;
     public static boolean existence = false;
 
 
@@ -65,7 +68,7 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.recipedetail, container, false);
+        View view = inflater.inflate(R.layout.frag_recipe_detail, container, false);
 
 //        vegInfo = view.findViewById(R.id.imagevegtrecdet);
         share = view.findViewById(R.id.imagesharerecdet);
@@ -75,7 +78,13 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
 
         recdetailimage = view.findViewById(R.id.imageofrecdetail);
-//        title = view.findViewById(R.id.nameofrecipedetail);
+        title = view.findViewById(R.id.collapsingToolbar);
+
+        title.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);
+        title.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);
+
+
+
         summary = view.findViewById(R.id.summary);
 
         recipeViewModel = RecipesViewModel.getInstance();
@@ -89,7 +98,7 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
 
                     RecipeDetailFrag.recipe = recipe;
                     Picasso.get().load(recipe.getImage()).into(recdetailimage);
-//                    title.setText(recipe.getTitle());
+                    title.setTitle(recipe.getTitle());
 
                     String instr = recipe.getInstructions();
 
@@ -237,15 +246,20 @@ public class RecipeDetailFrag extends Fragment implements ClickingTuple {
     @Override
     public void clickedOnTuple(int a) {
 
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .addToBackStack("rec")
-                .replace(R.id.frameL, getInstance(recipeList.get(a).getId()))
-                .commit();
+        if(isInternetOn()) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack("rec")
+                    .replace(R.id.frameL, getInstance(recipeList.get(a).getId()))
+                    .commit();
 
-        recipeViewModel.getCurrentRecipe(recipeList.get(a).getId());
-        recipeViewModel.getSimRecipes(recipeList.get(a).getId());
-        recipeViewModel.getIngredients();
-        recipeViewModel.rowExists(recipeList.get(a).getId());
+            recipeViewModel.getCurrentRecipe(recipeList.get(a).getId());
+            recipeViewModel.getSimRecipes(recipeList.get(a).getId());
+            recipeViewModel.getIngredients();
+            recipeViewModel.rowExists(recipeList.get(a).getId());
+
+        } else {
+            createToast("Bağlantı xətası");
+        }
     }
 }

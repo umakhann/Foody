@@ -37,7 +37,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tuple, parent, false);
         if(rec == 1) view = LayoutInflater
-                .from(parent.getContext()).inflate(R.layout.similartuple, parent, false);
+                .from(parent.getContext()).inflate(R.layout.tuple_similar, parent, false);
 
         return new ViewHolder(view, context);
     }

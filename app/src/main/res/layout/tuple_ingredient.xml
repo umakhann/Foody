@@ -65,11 +65,13 @@
 
 
     <LinearLayout
+        android:visibility="gone"
+        tools:visibility="visible"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#ccc"
-        android:backgroundTint="#ccc"
+        android:background="@color/greenmed"
+        android:backgroundTint="@color/greenmed"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

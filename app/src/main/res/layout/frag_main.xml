@@ -16,6 +16,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+
+        <ImageView
+            android:src="@drawable/chef"
+            android:id="@+id/imageView"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="26dp"
+            android:layout_gravity="center"/>
+
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,9 +58,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mainfragrec"
-            tools:listitem="@layout/mainfragrectuple"
+            tools:listitem="@layout/tuple_main_frag_rec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"/>
     </androidx.core.widget.NestedScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

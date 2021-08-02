@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.foodapp.R;
-import com.example.foodapp.viewmodel.RecipesViewModel;
+import com.example.foodapp.source.RecipesViewModel;
 
 public class FirstActivity extends AppCompatActivity {
 
@@ -17,11 +17,11 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.emptyact);
+        setContentView(R.layout.act_empty);
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.frameL, MainFrag.getInstance())
-                .addToBackStack("ty").commit();
+                .commit();
 
 //        getSupportFragmentManager().beginTransaction()
 //                .add(R.id.frameL, SearchFrag.getInstance())

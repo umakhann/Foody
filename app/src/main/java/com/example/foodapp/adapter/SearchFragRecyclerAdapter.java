@@ -32,7 +32,7 @@ public class SearchFragRecyclerAdapter extends RecyclerView.Adapter<SearchFragRe
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_tuple, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tuple_search, parent, false);
 //        if(rec == 1) view = LayoutInflater
 //                .from(parent.getContext()).inflate(R.layout.similartuple, parent, false);
 

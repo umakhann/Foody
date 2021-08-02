@@ -1,4 +1,4 @@
-package com.example.foodapp.database;
+package com.example.foodapp.source.database;
 
 import android.content.Context;
 
@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.foodapp.model.Recipe;

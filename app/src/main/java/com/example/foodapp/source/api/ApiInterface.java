@@ -1,4 +1,4 @@
-package com.example.foodapp.api.source;
+package com.example.foodapp.source.api;
 
 import com.example.foodapp.util.Util;
 import com.example.foodapp.model.Obyekt;

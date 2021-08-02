@@ -20,12 +20,12 @@ import com.example.foodapp.R;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.SearchFragRecyclerAdapter;
 import com.example.foodapp.model.Recipe;
-import com.example.foodapp.repository.RecipesRepo;
-import com.example.foodapp.viewmodel.RecipesViewModel;
+import com.example.foodapp.source.RecipesRepo;
+import com.example.foodapp.source.RecipesViewModel;
 
 import java.util.List;
 
-public class SearchFrag extends Fragment implements ClickingTuple {
+public class SearchFrag extends BaseFragment implements ClickingTuple {
 
     List<Recipe> list;
     EditText edittext;
@@ -39,7 +39,7 @@ public class SearchFrag extends Fragment implements ClickingTuple {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.search_frag, container, false);
+        View view = inflater.inflate(R.layout.frag_search, container, false);
 
 
         return view;
@@ -105,10 +105,14 @@ public class SearchFrag extends Fragment implements ClickingTuple {
     @Override
     public void clickedOnTuple(int a) {
 
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .addToBackStack("rec")
-                .replace(R.id.frameL, RecipeDetailFrag.getInstance(list.get(a).getId()))
-                .commit();
+        if(isInternetOn()) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack("rec")
+                    .replace(R.id.frameL, RecipeDetailFrag.getInstance(list.get(a).getId()))
+                    .commit();
+        } else {
+            createToast("Bağlantı xətası");
+        }
     }
 }

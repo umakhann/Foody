@@ -19,20 +19,20 @@ import com.example.foodapp.util.Util;
 import com.example.foodapp.adapter.ClickingTuple;
 import com.example.foodapp.adapter.RecAdapter;
 import com.example.foodapp.model.Recipe;
-import com.example.foodapp.viewmodel.RecipesViewModel;
+import com.example.foodapp.source.RecipesViewModel;
 
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class TypeFragment extends Fragment implements ClickingTuple {
+public class TypeFragment extends BaseFragment implements ClickingTuple {
 
     private RecyclerView recyclerView;
     private RecAdapter recyclerViewAdapter;
     RecipesViewModel recipeViewModel;
     public static List<Recipe> list;
     TextView typename;
-    CircleImageView typeimage;
+    ImageView typeimage;
     ImageView back;
 
 
@@ -52,7 +52,7 @@ public class TypeFragment extends Fragment implements ClickingTuple {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.typefrag, container, false);
+        View view = inflater.inflate(R.layout.frag_type, container, false);
 
         typename = view.findViewById(R.id.typename);
         typeimage = view.findViewById(R.id.typeimage);
@@ -105,13 +105,15 @@ public class TypeFragment extends Fragment implements ClickingTuple {
     @Override
     public void clickedOnTuple(int pos) {
 
-
-
-       getActivity().getSupportFragmentManager()
-               .beginTransaction()
-               .addToBackStack("rec")
-               .replace(R.id.frameL, RecipeDetailFrag.getInstance(list.get(pos).getId()))
-       .commit();
+        if(isInternetOn()) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack("rec")
+                    .replace(R.id.frameL, RecipeDetailFrag.getInstance(list.get(pos).getId()))
+                    .commit();
+        } else {
+            createToast("Bağlantı xətası");
+        }
     }
 
 }

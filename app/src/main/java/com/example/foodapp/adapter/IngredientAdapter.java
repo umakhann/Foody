@@ -30,7 +30,7 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
     @NonNull
     @Override
     public IngredientAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view = LayoutInflater.from(context).inflate(R.layout.ingredienttuple, parent, false);
+       View view = LayoutInflater.from(context).inflate(R.layout.tuple_ingredient, parent, false);
 
 
 
@@ -44,6 +44,10 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
 
         if(position == 0){
             holder.lin.setVisibility(View.VISIBLE);
+        }
+
+        if(position == ingredients.size()-1){
+            holder.lin2.setVisibility(View.VISIBLE);
         }
 
         holder.name.setText(ingredient.getName());
@@ -63,11 +67,12 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView name, count;
-        LinearLayout lin;
+        LinearLayout lin, lin2;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            lin2 = itemView.findViewById(R.id.linearLayout);
             lin = itemView.findViewById(R.id.lin);
             name = itemView.findViewById(R.id.ingrName);
             count = itemView.findViewById(R.id.ingrCount);

@@ -1,4 +1,4 @@
-package com.example.foodapp.database;
+package com.example.foodapp.source.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

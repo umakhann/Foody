@@ -3,6 +3,7 @@ package com.example.foodapp.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,7 +31,7 @@ public class MainFragRecAdapter extends RecyclerView.Adapter<MainFragRecAdapter.
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.mainfragrectuple, parent, false);
+                .inflate(R.layout.tuple_main_frag_rec, parent, false);
 
 
         return new ViewHolder(view);
@@ -59,7 +60,7 @@ public class MainFragRecAdapter extends RecyclerView.Adapter<MainFragRecAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView fullName, cuisine, diet;
-        CircleImageView image;
+        ImageView image;
 
 
         public ViewHolder(@NonNull View itemView) {

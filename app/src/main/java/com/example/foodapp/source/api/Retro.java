@@ -1,8 +1,5 @@
-package com.example.foodapp.api.source;
+package com.example.foodapp.source.api;
 
-import android.util.Log;
-
-import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
