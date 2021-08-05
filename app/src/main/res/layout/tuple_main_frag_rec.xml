@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <TextView
@@ -16,7 +17,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:fontFamily="@font/poppins_medium"/>
 
     <TextView
         android:id="@+id/cuisinetextmainfrag"
@@ -28,7 +31,9 @@
         android:text="Cuisines"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:fontFamily="@font/poppins_medium"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/mainfragcard"
@@ -48,7 +53,7 @@
             android:layout_height="35dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
-            android:src="@color/white" />
+             />
 
         <TextView
             android:id="@+id/mainfragcardtext"
@@ -59,7 +64,8 @@
             android:text="Name"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold" />
+
+            android:fontFamily="@font/poppins_medium"/>
 
 
     </androidx.cardview.widget.CardView>

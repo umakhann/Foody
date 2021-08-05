@@ -3,10 +3,12 @@
 
     <style name="CollapsedAppBar" parent="@android:style/TextAppearance">
         <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="ExpandedAppBar" parent="@android:style/TextAppearance">
         <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
 </resources>

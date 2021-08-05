@@ -20,6 +20,9 @@
         android:visibility="gone"
         android:id="@+id/bas"
         android:paddingTop="20dp"
+        tools:visibility="visible"
+
+        android:fontFamily="@font/poppins_medium"
         />
 <androidx.cardview.widget.CardView
 
@@ -43,6 +46,8 @@
         android:gravity="left"
         android:text="This sentence contains 25 characters if it is no longer than"
         android:textColor="@color/ourgray"
+
+        android:fontFamily="@font/poppins_medium"
        />
 </androidx.cardview.widget.CardView>
 

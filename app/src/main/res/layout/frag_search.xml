@@ -7,49 +7,49 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
         android:id="@+id/toolbarStart"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@color/greenmed"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/greenmed"
         tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imagebackrecdet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/back"
             android:layout_marginEnd="15dp"
+            app:srcCompat="@drawable/back"
             tools:layout_editor_absoluteX="343dp"
             tools:layout_editor_absoluteY="16dp" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:hint="Search Recipe"
-                android:textColor="@color/nearwhite"
-                android:textColorHint="@color/nearwhite"
-                android:backgroundTint="@color/nearwhite"
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/nearwhite"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Search Recipe"
+            android:textColor="@color/nearwhite"
+android:layout_marginLeft="30dp"
+            android:textColorHint="@color/nearwhite"
+            android:textSize="16sp" />
 
-                 />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="15dp"
+            app:srcCompat="@drawable/search"
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/search"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginEnd="15dp"
-
-                tools:ignore="RtlHardcoded" />
-
+            tools:ignore="RtlHardcoded" />
 
 
     </androidx.appcompat.widget.Toolbar>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchrec"
