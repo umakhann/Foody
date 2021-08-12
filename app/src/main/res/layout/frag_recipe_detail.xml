@@ -16,10 +16,7 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-
-
-        >
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -117,7 +114,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="INSTRUCTIONS"
@@ -140,8 +137,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
 
-
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="15dp"
                 tools:listitem="@layout/tuple_similar" />
