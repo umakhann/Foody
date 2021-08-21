@@ -7,7 +7,8 @@ Foody app is an example project where it is possible to get food recipes.
 - Search recipes by food name or recipe name;
 - Get a list of recipes;
 - See recipe details and instructions;
-- Save favorite recipes.
+- Save favorite recipes;
+- Share recipes.
 
 
 
