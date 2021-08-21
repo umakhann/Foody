@@ -1,6 +1,8 @@
 # About Foody
 Foody app is an example project where it is possible to get food recipes.
 
+
+
 # Application Features
 - Search recipes by food name or recipe name;
 - Get a list of recipes;
@@ -8,10 +10,15 @@ Foody app is an example project where it is possible to get food recipes.
 - Save favorite recipes.
 
 
+
+
 # Used Libraries
 - Room
 - Retrofit
 - Picasso
+
+
+
 
 # Architecture
 MVVM
