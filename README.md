@@ -21,4 +21,4 @@ Foody app is an example project where it is possible to get food recipes.
 
 
 # Architecture
-MVVM
+- MVVM
