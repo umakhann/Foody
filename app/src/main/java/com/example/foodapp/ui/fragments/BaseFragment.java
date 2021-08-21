@@ -1,4 +1,4 @@
-package com.example.foodapp.ui;
+package com.example.foodapp.ui.fragments;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

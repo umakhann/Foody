@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodapp.R;
-import com.example.foodapp.ui.RecipeDetailFrag;
+import com.example.foodapp.ui.fragments.RecipeDetailFrag;
 import com.example.foodapp.model.Recipe;
 import com.squareup.picasso.Picasso;
 
@@ -47,7 +47,8 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
             Recipe recipant = foodList.get(position);
             String str = recipant.getTitle().substring(0, 1).toUpperCase() + recipant.getTitle().substring(1).toLowerCase();
 
-            if(recipant.getTitle().length() > 30 && rec == 0){
+            // String'in uzunluğu
+            if(recipant.getTitle().length() > 36 && rec == 0){
                 str = str.substring(0, 25).concat("...");
             } else if(recipant.getTitle().length() > 50 && rec == 1) {
                 str = str.substring(0, 50).concat("...");
@@ -55,7 +56,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
             }
 
             if(rec == 1 && position == 0){
-                holder.basliq.setVisibility(View.VISIBLE);
+                holder.header.setVisibility(View.VISIBLE);
             }
 
             holder.name.setText(str);
@@ -83,7 +84,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
         List<Integer> selectedList;
         ImageView mg;
-        TextView name, basliq;
+        TextView name, header;
         Context context;
 
         public ViewHolder(@NonNull View itemView, Context context) {
@@ -93,7 +94,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
             mg = itemView.findViewById(R.id.imageofrecipe);
             name = itemView.findViewById(R.id.nameofrecipe);
-            basliq = itemView.findViewById(R.id.bas);
+            header = itemView.findViewById(R.id.bas);
 
             itemView.setOnClickListener(this);
 

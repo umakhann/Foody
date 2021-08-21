@@ -11,7 +11,7 @@ import com.example.foodapp.source.api.ApiInterface;
 import com.example.foodapp.source.api.Retro;
 import com.example.foodapp.source.database.RecipeDao;
 import com.example.foodapp.source.database.RecipeDatabase;
-import com.example.foodapp.model.Obyekt;
+import com.example.foodapp.model.GetObject;
 import com.example.foodapp.model.Random;
 import com.example.foodapp.model.Recipe;
 
@@ -27,7 +27,7 @@ public class RecipesRepo {
 
     private String b;
     private Application context;
-    private Obyekt obyekt;
+    private GetObject obyekt;
     private RecipeDao dao;
     MutableLiveData<Recipe> recipe = new MutableLiveData<>();
     LiveData<List<Recipe>> dbList = new MutableLiveData<>();;
@@ -40,11 +40,11 @@ public class RecipesRepo {
 
     public MutableLiveData<List<Recipe>> getDietRecipes(String diet) {
         ApiInterface apiInterface = Retro.getRetrofit().create(ApiInterface.class);
-        Call<Obyekt> call = apiInterface.getDietRecipes(diet);
+        Call<GetObject> call = apiInterface.getDietRecipes(diet);
 
-        call.enqueue(new Callback<Obyekt>() {
+        call.enqueue(new Callback<GetObject>() {
             @Override
-            public void onResponse(Call<Obyekt> call, Response<Obyekt> response) {
+            public void onResponse(Call<GetObject> call, Response<GetObject> response) {
 
                 list.setValue(response.body().getResults());
 
@@ -54,7 +54,7 @@ public class RecipesRepo {
                 }
             }
             @Override
-            public void onFailure(Call<Obyekt> call, Throwable t) {
+            public void onFailure(Call<GetObject> call, Throwable t) {
                 Log.d("tag", "onFailure");
             }
         });
@@ -78,11 +78,11 @@ public class RecipesRepo {
 
     public MutableLiveData<List<Recipe>> getRecipes(String cuisine) {
         ApiInterface apiInterface = Retro.getRetrofit().create(ApiInterface.class);
-        Call<Obyekt> call = apiInterface.getRecipes(cuisine);
+        Call<GetObject> call = apiInterface.getRecipes(cuisine);
 
-        call.enqueue(new Callback<Obyekt>() {
+        call.enqueue(new Callback<GetObject>() {
             @Override
-            public void onResponse(Call<Obyekt> call, Response<Obyekt> response) {
+            public void onResponse(Call<GetObject> call, Response<GetObject> response) {
 
                 list.setValue(response.body().getResults());
 
@@ -92,7 +92,7 @@ public class RecipesRepo {
                 }
             }
             @Override
-            public void onFailure(Call<Obyekt> call, Throwable t) {
+            public void onFailure(Call<GetObject> call, Throwable t) {
                 Log.d("tag", "onFailure");
             }
         });
@@ -177,11 +177,11 @@ public class RecipesRepo {
 
     public MutableLiveData<List<Recipe>> getSearchRecipes(String query) {
         ApiInterface apiInterface = Retro.getRetrofit().create(ApiInterface.class);
-        Call<Obyekt> call = apiInterface.getSearchRecipes(query);
+        Call<GetObject> call = apiInterface.getSearchRecipes(query);
 
-        call.enqueue(new Callback<Obyekt>() {
+        call.enqueue(new Callback<GetObject>() {
             @Override
-            public void onResponse(Call<Obyekt> call, Response<Obyekt> response) {
+            public void onResponse(Call<GetObject> call, Response<GetObject> response) {
 
                 list.setValue(response.body().getResults());
 
@@ -191,7 +191,7 @@ public class RecipesRepo {
                 }
             }
             @Override
-            public void onFailure(Call<Obyekt> call, Throwable t) {
+            public void onFailure(Call<GetObject> call, Throwable t) {
                 Log.d("tag", "onFailure");
             }
         });

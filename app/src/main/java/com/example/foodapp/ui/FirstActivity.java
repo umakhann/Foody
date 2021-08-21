@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.example.foodapp.R;
 import com.example.foodapp.source.RecipesViewModel;
+import com.example.foodapp.ui.fragments.MainFrag;
 
 public class FirstActivity extends AppCompatActivity {
 

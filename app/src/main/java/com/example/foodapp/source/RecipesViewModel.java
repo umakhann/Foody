@@ -39,9 +39,6 @@ public class RecipesViewModel extends AndroidViewModel {
     }
 
 
-
-
-
     public MutableLiveData<List<Recipe>> getSearchResult(String query){
         return repo.getSearchRecipes(query);
     }

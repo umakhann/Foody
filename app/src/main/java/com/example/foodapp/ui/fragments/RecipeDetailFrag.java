@@ -1,4 +1,4 @@
-package com.example.foodapp.ui;
+package com.example.foodapp.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,27 +28,25 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
-    public static final String TAG = "recipeDetTag";
-    private RecyclerView recyclerView, simRec;
-    private IngredientAdapter recyclerViewAdapter;
-    private RecAdapter recAdapter;
-    RecipesRepo repo;
-    RecipesViewModel recipeViewModel;
-    public List<Ingredient> list;
-    public List<Recipe> recipeList;
-    public ImageView vegInfo, share, favourite, back;
-    private static Recipe recipe;
-    public static List<Recipe> dbList;
+        public static final String TAG = "recipeDetTag";
+        private RecyclerView recyclerView, simRec;
+        private IngredientAdapter recyclerViewAdapter;
+        private RecAdapter recAdapter;
+        RecipesRepo repo;
+        RecipesViewModel recipeViewModel;
+        public List<Ingredient> list;
+        public List<Recipe> recipeList;
+        public ImageView vegInfo, share, favourite, back;
+        private static Recipe recipe;
+        public static List<Recipe> dbList;
 
-    private ImageView recdetailimage;
-    private ImageView vegan, vegetarian;
-    private TextView summary;
-    private CollapsingToolbarLayout title;
-    public static boolean existence = false;
+        private ImageView recdetailimage;
+        private ImageView vegan, vegetarian;
+        private TextView summary;
+        private CollapsingToolbarLayout title;
+        public static boolean existence = false;
 
 
     public static RecipeDetailFrag getInstance(int id){
@@ -70,7 +66,6 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
         View view = inflater.inflate(R.layout.frag_recipe_detail, container, false);
 
-//        vegInfo = view.findViewById(R.id.imagevegtrecdet);
         share = view.findViewById(R.id.imagesharerecdet);
         favourite = view.findViewById(R.id.imagefavouritesrecdet);
         back = view.findViewById(R.id.imagebackrecdet);
@@ -102,47 +97,11 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
                     String instr = recipe.getInstructions();
 
-//                    StringBuilder sb = new StringBuilder(instr);
-//                    Log.d(TAG, "onCreateView: " + sb.length());
-
-//                    int i=0;
-//                    while(i < sb.length()){
-//
-//                        if(i != (sb.length()-1) && sb.charAt(i) == '.' && sb.charAt(i+1) != ' ') {
-//                            sb.insert((i+1), ' ');
-//                        }
-//
-//
-//                        if(sb.charAt(i) == '<'){
-//                            while(sb.charAt(i) != '>'){
-//                                sb.deleteCharAt(i);
-//                            }
-//                            sb.deleteCharAt(i);
-//
-//                                if(sb.charAt(i) == '<'){
-//                                    while(sb.charAt(i) != '>'){
-//                                        sb.deleteCharAt(i);
-//                                    }
-//                                    sb.deleteCharAt(i);
-//                                }
-//                        }
-//                        i++;
-//                    }
-
-//                    if(sb.charAt(sb.length()-2) != '.'){
-//                        sb.insert((i+1), '.');
-//                    }
-//                    else if(sb.charAt(sb.length()-1) != '.')
-//                        sb.append('.');
-
-//                    Log.d(TAG, "onCreateView: " + sb.length());
 
 
                     if(instr != null){
                     summary.setText("INSTRUCTIONS\n\n" + instr);
                     } else  summary.setText("No Instructions!");
-
-//                        Log.d("instructionlog", recipe.getInstructions());
 
 
                     recyclerView = view.findViewById(R.id.ingrec);

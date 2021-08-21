@@ -26,15 +26,13 @@ public class SearchFragRecyclerAdapter extends RecyclerView.Adapter<SearchFragRe
         this.foodList = foodList;
         this.context = context;
         clickingTuple = tuple;
-//        if(tuple instanceof RecipeDetailFrag) rec = 1;
+
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tuple_search, parent, false);
-//        if(rec == 1) view = LayoutInflater
-//                .from(parent.getContext()).inflate(R.layout.similartuple, parent, false);
 
         return new ViewHolder(view, context);
     }
@@ -52,11 +50,6 @@ public class SearchFragRecyclerAdapter extends RecyclerView.Adapter<SearchFragRe
 
         holder.name.setText(str);
 
-//        if(rec.getImage() != null) {
-//            Picasso.get()
-//                    .load(rec.getImage())
-//                    .into(holder.mg);
-//        }
     }
 
     @Override
@@ -74,7 +67,7 @@ public class SearchFragRecyclerAdapter extends RecyclerView.Adapter<SearchFragRe
             implements View.OnClickListener {
 
         List<Integer> selectedList;
-//        ImageView mg;
+
         TextView name;
         Context context;
 
@@ -82,10 +75,7 @@ public class SearchFragRecyclerAdapter extends RecyclerView.Adapter<SearchFragRe
             super(itemView);
 
             this.context = context;
-
-//            mg = itemView.findViewById(R.id.imageofrecipe);
             name = itemView.findViewById(R.id.searchResultName);
-
             itemView.setOnClickListener(this);
 
         }

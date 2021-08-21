@@ -2,7 +2,7 @@ package com.example.foodapp.model;
 
 import java.util.List;
 
-public class Obyekt {
+public class GetObject {
 
     List<Recipe> results;
     int number;
