@@ -1,5 +1,6 @@
 package com.example.foodapp.ui.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,6 +65,7 @@ public class MainFrag extends BaseFragment implements ClickingTuple {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void clickedOnTuple(int a) {
 

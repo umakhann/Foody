@@ -1,6 +1,7 @@
 package com.example.foodapp.ui.fragments;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -87,7 +90,7 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
         int id = getArguments().getInt("id");
         repo = new RecipesRepo(getActivity().getApplication());
 
-        recipeViewModel.getCurrentRecipe(id).observe(getActivity(),
+        recipeViewModel.getCurrentRecipe(id).observe((LifecycleOwner) getActivity(),
                 recipe -> {
 
 
@@ -113,7 +116,7 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
 
 
-                    repo.rowExists(id).observe(this.getActivity(), new Observer<Boolean>() {
+                    repo.rowExists(id).observe((LifecycleOwner) this.getActivity(), new Observer<Boolean>() {
                         @Override
                         public void onChanged(Boolean aBoolean) {
                             if (aBoolean) {
@@ -135,7 +138,7 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
 
 
-        recipeViewModel.getSimRecipes(id).observe(getActivity(), recipes -> {
+        recipeViewModel.getSimRecipes(id).observe((LifecycleOwner) getActivity(), recipes -> {
 
             recipeList = recipes;
 
@@ -161,7 +164,7 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
             Recipe ourRecipe = new Recipe();
 
-            recipeViewModel.getCurrentRecipe(id).observe(getActivity(), recipe -> {
+            recipeViewModel.getCurrentRecipe(id).observe((LifecycleOwner) getActivity(), recipe -> {
 
 
                 ourRecipe.setTitle(recipe.getTitle());
@@ -194,14 +197,9 @@ public class RecipeDetailFrag extends BaseFragment implements ClickingTuple {
 
         return view;
     }
-//
-//    private boolean checkForExistence(Recipe recipe) {
-//        if(repo.rowExists(recipe.getId()))
-//        return true;
-//        else
-//        return false;
-//    }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void clickedOnTuple(int a) {
 

@@ -66,7 +66,6 @@ public class SearchFragRecyclerAdapter extends RecyclerView.Adapter<SearchFragRe
     public static class ViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
-        List<Integer> selectedList;
 
         TextView name;
         Context context;

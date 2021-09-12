@@ -228,39 +228,39 @@ public class RecipesRepo {
                 dao.delete(recipe));
     }
 
-    private static class InsertRecipeAsyncTask extends AsyncTask<Recipe, Void, Void> {
-        private RecipeDao recipeDao;
-        private InsertRecipeAsyncTask(RecipeDao noteDao) {
-            this.recipeDao = recipeDao;
-        }
-        @Override
-        protected Void doInBackground(Recipe... recipes) {
-            recipeDao.insert(recipes[0]);
-            return null;
-        }
-    }
-
-    private static class DeleteRecipeAsyncTask extends AsyncTask<Recipe, Void, Void> {
-        private RecipeDao recipeDao;
-        private DeleteRecipeAsyncTask(RecipeDao recipeDao) {
-            this.recipeDao = recipeDao;
-        }
-        @Override
-        protected Void doInBackground(Recipe... recipes) {
-            recipeDao.delete(recipes[0]);
-            return null;
-        }
-    }
-
-    private static class GetAllRecipesAsyncTask extends AsyncTask<Void, Void, Void> {
-        private RecipeDao recipeDao;
-        private GetAllRecipesAsyncTask(RecipeDao recipeDao) {
-            this.recipeDao = recipeDao;
-        }
-        @Override
-        protected Void doInBackground(Void... voids) {
-            recipeDao.getAllRecipes();
-            return null;
-        }
-    }
+//    private static class InsertRecipeAsyncTask extends AsyncTask<Recipe, Void, Void> {
+//        private RecipeDao recipeDao;
+//        private InsertRecipeAsyncTask(RecipeDao noteDao) {
+//            this.recipeDao = recipeDao;
+//        }
+//        @Override
+//        protected Void doInBackground(Recipe... recipes) {
+//            recipeDao.insert(recipes[0]);
+//            return null;
+//        }
+//    }
+//
+//    private static class DeleteRecipeAsyncTask extends AsyncTask<Recipe, Void, Void> {
+//        private RecipeDao recipeDao;
+//        private DeleteRecipeAsyncTask(RecipeDao recipeDao) {
+//            this.recipeDao = recipeDao;
+//        }
+//        @Override
+//        protected Void doInBackground(Recipe... recipes) {
+//            recipeDao.delete(recipes[0]);
+//            return null;
+//        }
+//    }
+//
+//    private static class GetAllRecipesAsyncTask extends AsyncTask<Void, Void, Void> {
+//        private RecipeDao recipeDao;
+//        private GetAllRecipesAsyncTask(RecipeDao recipeDao) {
+//            this.recipeDao = recipeDao;
+//        }
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            recipeDao.getAllRecipes();
+//            return null;
+//        }
+//    }
 }
